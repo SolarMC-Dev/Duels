@@ -413,6 +413,12 @@ public class DuelManager implements Loadable {
                 player.setAllowFlight(false);
             }
 
+            for (ItemStack itemStack : player.getInventory().getContents()) {
+                if (itemStack != null && itemStack.getType() == Material.ENDER_PEARL) {
+                    player.getInventory().remove(itemStack);
+                }
+            }
+
             player.closeInventory();
             playerManager.create(player, match.isOwnInventory() && config.isOwnInventoryDropInventoryItems());
             teleport.tryTeleport(player, locations.get(++position));
