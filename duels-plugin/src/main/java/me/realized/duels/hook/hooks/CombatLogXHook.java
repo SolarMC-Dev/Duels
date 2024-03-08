@@ -24,7 +24,7 @@ public class CombatLogXHook extends PluginHook<DuelsPlugin> {
         this.arenaManager = plugin.getArenaManager();
 
         try {
-            Class.forName("com.SirBlobman.combatlogx.api.event.PlayerPreTagEvent");
+            Class.forName("com.sirblobman.combatlogx.api.event.PlayerPreTagEvent");
         } catch (ClassNotFoundException ex) {
             throw new RuntimeException("This version of " + getName() + " is not supported. Please try upgrading to the latest version.");
         }
