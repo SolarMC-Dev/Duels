@@ -1,6 +1,6 @@
 package me.realized.duels.hook.hooks;
 
-import com.github.sirblobman.combatlogx.api.ICombatLogXNeeded;
+import com.github.sirblobman.combatlogx.api.ICombatLogX;
 import com.github.sirblobman.combatlogx.api.event.PlayerPreTagEvent;
 import me.realized.duels.DuelsPlugin;
 import me.realized.duels.arena.ArenaManagerImpl;
@@ -33,7 +33,7 @@ public class CombatLogXHook extends PluginHook<DuelsPlugin> {
     }
 
     public boolean isTagged(final Player player) {
-        return config.isClxPreventDuel() && ((ICombatLogXNeeded) getPlugin()).getCombatLogX().getCombatManager().isInCombat(player);
+        return config.isClxPreventDuel() && ((ICombatLogX) getPlugin()).getCombatManager().isInCombat(player);
     }
 
     public class CombatLogXListener implements Listener {
