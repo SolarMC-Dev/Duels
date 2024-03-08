@@ -1,6 +1,10 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            name = 'sirblobman-public'
+            url = 'https://nexus.sirblobman.xyz/public/'
+        }
         gradlePluginPortal()
     }
 
@@ -59,6 +63,11 @@ subprojects {
         maven {
             name 'essentialsx-repo'
             url 'https://repo.essentialsx.net/releases/'
+        }
+
+        maven {
+            name = 'sirblobman-public'
+            url = 'https://nexus.sirblobman.xyz/public/'
         }
 
         flatDir {
