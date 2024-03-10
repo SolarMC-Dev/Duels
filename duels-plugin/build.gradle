@@ -57,11 +57,11 @@ shadowJar {
         include(project(':duels-worldguard'))
         include(project(':duels-worldguard-v6'))
         include(project(':duels-worldguard-v7'))
-        include(dependency('com.fasterxml.jackson.core:.*'))
+        include(dependency('com.fasterxml.jackson.core:jackson-databind:2.13.1'))
     }
 
     //final String group = project.group.toString() + "." + parent.name.toLowerCase() + ".shaded."
-    //relocate 'com.fasterxml.jackson.core', group + 'jackson-core'
+    relocate 'com.fasterxml.jackson.databind', "me.realized.shaded.jackson"
 }
 
 // To build Duels plugin jar, run './gradlew clean build'.
